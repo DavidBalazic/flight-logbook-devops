@@ -1,20 +1,67 @@
-#  Evidenca letenja projekt
+# 🛫 Personal Flight Logging App
 
-## Struktura projekta
+This is a personal flight logbook application designed for private pilots to **record**, **manage**, and **track** their flight history and aircraft usage with ease. Built with modern web technologies and a CI/CD-first mindset, this project also serves as a **DevOps showcase**, demonstrating production-ready automation and cloud deployment pipelines.
 
-    Backend: FastAPI
-    Frontend: Svelte
-    UI: shadcn-svelte
-    Database: MySQL
+---
 
-##   Git Flow
+## ✈️ Features
 
-Projekt uporablja Git flow strategijo za efektivno organizacijo branch-ov
+- 📘 **Flight Logging**: Store detailed records of each flight including date, aircraft, duration, and notes.
+- 🛩️ **Aircraft Management**: Track different planes used for flights.
+- 🧾 **Flight History**: Filter and view past flights with a user-friendly interface.
+- 📦 **CI/CD Automation**: GitHub Actions pipeline for build, test, coverage, Dockerization, and deployment.
 
-Feature Branch (feat/naziv-funkcionalnosti): Namenjen razvoju posameznih funkcionalnosti. Vsaka nova funkcionalnost dobi svojo feature vejo, ki izhaja iz develop veje. Primer imena: feat/moja-funkcionalnost.
+---
 
-Develop Branch (develop): Glavna veja za integracijo novih funkcionalnosti in skupno testiranje. Vse feature veje se združujejo (merge) v develop, ki predstavlja trenutno razvojno različico projekta.
+## 🧱 Tech Stack
 
-Release Branch (release/vX.X): Uporablja se za pripravo končne verzije pred izidom (release). Na tej veji se izvajajo zadnji popravki, popravki verzij, optimizacije in končna testiranja. Ko je vse pripravljeno, se združi v main.
+| Layer     | Technology        |
+|-----------|-------------------|
+| Backend   | [FastAPI](https://fastapi.tiangolo.com/) |
+| Frontend  | [Svelte](https://svelte.dev/) + [shadcn-svelte](https://github.com/shadcn-ui/ui) |
+| Database  | SQLite            |
+| DevOps    | GitHub Actions + Docker + SonarCloud + Render |
 
-Main Branch (main): Primarna veja za produkcijo, ki vsebuje vedno zadnjo stabilno verzijo projekta. Vsaka sprememba v tej veji je preverjena, preizkušena in pripravljena za uporabnike.
+---
+
+## 🧪 GitHub Actions CI/CD Overview
+
+This project includes a comprehensive CI/CD pipeline for the **backend** and **frontend**, triggered on pushes to `develop` and `production` branches.
+
+### ✅ Workflow Includes:
+
+- **Build** with dependency caching
+- **Test** with `coverage`
+- **SonarCloud** quality analysis
+- **Docker** image build and push (dev/prod tags)
+- **Deployment** to [Render](https://render.com/)
+- **Pages** Deployed pages to giuthub pages
+
+> 📘 _See full pipeline config in `.github/workflows/backend.yml` and `.github/workflows/frontend.yml`_
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Docker
+
+### Backend Setup
+
+```bash
+git clone https://github.com/DavidBalazic/RIRS.git
+cd RIRS/EvidencaLetenjaBackend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
+### Frontend Setup
+
+```bash
+cd frontend/evidencaLetenja 
+npm install 
+npm run dev 
+```
