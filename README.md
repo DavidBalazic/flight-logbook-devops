@@ -50,8 +50,8 @@ This project includes a comprehensive CI/CD pipeline for the **backend** and **f
 ### Backend Setup
 
 ```bash
-git clone https://github.com/DavidBalazic/RIRS.git
-cd RIRS/EvidencaLetenjaBackend
+git clone https://github.com/DavidBalazic/flight-logbook-devops.git
+cd flight-logbook-devops/EvidencaLetenjaBackend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -61,7 +61,7 @@ python main.py
 ### Frontend Setup
 
 ```bash
-cd frontend/evidencaLetenja 
+cd frontend/flight-logbook-devops 
 npm install 
 npm run dev 
 ```
